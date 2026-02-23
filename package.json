@@ -1,0 +1,13 @@
+{
+  "name": "minecraft-speed-proxy-data-statistics-tool",
+  "version": "1.0.0",
+  "description": "Calculator and WebUI for Minecraft Speed Proxy log data statistics",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "license": "MIT"
+}

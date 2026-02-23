@@ -1,0 +1,8 @@
+{
+  "logsUrl": "http://domain:port/",
+  "serverHost": "0.0.0.0",
+  "serverPort": 8889,
+  "requestTimeoutMs": 15000,
+  "allowInsecureTls": false,
+  "maxConcurrentDownloads": 4
+}

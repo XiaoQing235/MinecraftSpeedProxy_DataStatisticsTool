@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Minecraft Proxy 流量统计</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="panel">
+      <header>
+        <h1>Minecraft Proxy 流量统计</h1>
+        <p>点击 Calculate 触发服务端遍历日志并生成统计 JSON。</p>
+      </header>
+
+      <section class="controls">
+        <button id="calculateBtn" class="btn btn-primary">Calculate</button>
+        <button id="downloadBtn" class="btn" disabled>Download JSON</button>
+      </section>
+
+      <section class="status">
+        <p id="statusText">等待计算...</p>
+      </section>
+
+      <section class="result">
+        <h2>玩家统计</h2>
+        <table id="resultTable">
+          <thead>
+            <tr>
+              <th>Player</th>
+              <th>Total Traffic</th>
+              <th>Total Online Time</th>
+              <th>Average Speed</th>
+            </tr>
+          </thead>
+          <tbody id="resultBody"></tbody>
+        </table>
+        <p id="proxyTotalTraffic" class="proxy-total"></p>
+        <p id="proxyTotalOnlineTime" class="proxy-total"></p>
+        <p id="proxyAverageSpeed" class="proxy-total"></p>
+      </section>
+    </main>
+
+    <script src="/app.js"></script>
+  </body>
+</html>

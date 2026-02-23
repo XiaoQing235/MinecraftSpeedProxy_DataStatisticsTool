@@ -1,0 +1,147 @@
+:root {
+  --bg-1: #f2f6ff;
+  --bg-2: #dbe6ff;
+  --panel: #ffffffde;
+  --text: #1e2438;
+  --muted: #5d6788;
+  --line: #bec8e4;
+  --accent: #0c63e7;
+  --accent-dark: #094bb0;
+  --ok: #0f9b54;
+  --error: #b53d45;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 15% 20%, #ffffff 0%, #ffffff00 55%),
+    linear-gradient(130deg, var(--bg-1), var(--bg-2));
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.panel {
+  width: min(920px, 100%);
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  box-shadow: 0 18px 45px #37569b24;
+  padding: 28px;
+  backdrop-filter: blur(4px);
+}
+
+h1 {
+  margin: 0 0 8px 0;
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  letter-spacing: 0.02em;
+}
+
+h2 {
+  margin: 0 0 12px 0;
+  font-size: 1.05rem;
+}
+
+p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.controls {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--text);
+  border-radius: 10px;
+  padding: 9px 14px;
+  font-size: 0.96rem;
+  cursor: pointer;
+  transition: transform 0.16s ease, border-color 0.16s ease, background-color 0.16s ease;
+}
+
+.btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+  border-color: #8ea2d9;
+}
+
+.btn:disabled {
+  opacity: 0.56;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #fff;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: var(--accent-dark);
+}
+
+.status {
+  margin-top: 14px;
+  min-height: 24px;
+}
+
+.status.ok #statusText {
+  color: var(--ok);
+}
+
+.status.error #statusText {
+  color: var(--error);
+}
+
+.result {
+  margin-top: 18px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+thead th {
+  background: #eef3ff;
+  text-align: left;
+  padding: 10px;
+  font-size: 0.9rem;
+}
+
+tbody td {
+  border-top: 1px solid #e4ebff;
+  padding: 9px 10px;
+  font-size: 0.92rem;
+}
+
+.proxy-total {
+  margin-top: 12px;
+  color: var(--text);
+  font-weight: 700;
+}
+
+@media (max-width: 640px) {
+  .panel {
+    padding: 18px;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}
